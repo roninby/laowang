@@ -43,4 +43,811 @@
             border-bottom: 1px solid rgba(0, 229, 255, 0.1);
         }
 
-        .container
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(98, 0, 234, 0.8);
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2.5rem;
+        }
+
+        nav ul li a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+            text-shadow: var(--glow);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+            box-shadow: var(--glow);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* 首屏 Banner */
+        .hero {
+            background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), 
+                        url('https://images.unsplash.com/photo-1618336753974-aae8e04506aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: 5px;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--text-main);
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
+
+        /* 游戏风格按钮 */
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent);
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: var(--accent);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: var(--secondary);
+            box-shadow: var(--glow);
+            transform: translateY(-3px);
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        section {
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+            box-shadow: var(--glow);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* 世界观介绍区块 */
+        .lore-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .lore-img {
+            position: relative;
+        }
+
+        .lore-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            filter: grayscale(20%) contrast(120%);
+            transition: all 0.5s ease;
+        }
+
+        .lore-img::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: -15px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary);
+            z-index: -1;
+            transition: all 0.5s ease;
+        }
+
+        .lore-img:hover img {
+            filter: grayscale(0) contrast(110%);
+            transform: translate(-5px, -5px);
+            box-shadow: var(--glow);
+        }
+
+        .lore-img:hover::after {
+            transform: translate(5px, 5px);
+        }
+
+        .lore-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .lore-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* 数据统计面板 */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            background-color: var(--light-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background-color: #1c1c2a;
+            border-color: rgba(0, 229, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-item:hover::before {
+            transform: translateX(100%);
+        }
+
+        .stat-item i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 0 10px rgba(98, 0, 234, 0.5);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* 职业介绍区块 */
+        .classes-bg {
+            background: radial-gradient(circle at center, #161621 0%, var(--secondary) 100%);
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .class-card {
+            background-color: var(--light-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .class-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: var(--glow);
+        }
+
+        .class-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .class-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, var(--light-bg), transparent);
+        }
+
+        .class-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .class-card:hover .class-img img {
+            transform: scale(1.15);
+        }
+
+        .class-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .class-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            letter-spacing: 2px;
+        }
+
+        .class-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* 底部行动呼吁区块 */
+        .cta {
+            background: linear-gradient(rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.9)),
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center center fixed;
+            background-size: cover;
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            color: #ddd;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #050508;
+            padding: 4rem 0 1.5rem;
+            border-top: 1px solid rgba(0, 229, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-column p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-links li a:hover {
+            color: var(--accent);
+            padding-left: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .social-links a:hover {
+            background-color: transparent;
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: var(--glow);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* 移动端适配 */
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        @media (max-width: 992px) {
+            .lore-content, .stats, .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .classes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(10, 10, 15, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 1rem 0;
+                text-align: center;
+                border-bottom: 1px solid var(--accent);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                padding: 1rem 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .lore-content, .classes-grid, .footer-content, .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .lore-img::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-dragon"></i>
+                <span>星渊神域</span>
+            </div>
+            <nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#lore">世界观</a></li>
+                    <li><a href="#classes">核心职业</a></li>
+                    <li><a href="#download">加入游戏</a></li>
+                    <li><a href="#contact">社区支持</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏区域 -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>踏入星渊，觉醒神格</h1>
+            <p>2026年度殿堂级次世代史诗MMORPG。探索无缝大地图，体验极致硬核战斗，与数百万玩家一起书写属于你的神话篇章。</p>
+            <a href="#download" class="btn">立即开始旅程</a>
+        </div>
+    </section>
+
+    <!-- 世界观/简介区域 -->
+    <section id="lore">
+        <div class="container">
+            <div class="section-title">
+                <h2>沉浸式宏大世界</h2>
+                <p>万年之前，星渊破碎，古神陨落。如今暗黑军团再次苏醒，谁能重拾神格，拯救即将崩塌的艾瑟尔加德大陆？</p>
+            </div>
+            <div class="lore-content">
+                <div class="lore-img">
+                    <img src="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="游戏场景原画">
+                </div>
+                <div class="lore-text">
+                    <h3>无缝大世界探索</h3>
+                    <p>超过 10,000 平方公里的无缝开放世界地图，从幽暗的深渊废墟到高耸入云的神族浮空城。采用虚幻引擎5（UE5）打造，提供支持全天候实时光影与动态天气的极致视听盛宴。</p>
+                    <p>丰富的动态随机事件系统（Dynamic Events），你的每一个选择与战果都将永久改变服务器的生态格局与剧情走向。结盟或者征服，由你决定！</p>
+                    <a href="#" class="btn" style="padding: 0.8rem 2rem; font-size: 1rem; margin-top: 1rem;">查看完整世界观</a>
+                </div>
+            </div>
+            <!-- 数据统计面板 -->
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>广袤无缝大洲</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <h3 class="counter" data-target="5000000">0</h3>
+                    <p>全球注册玩家</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-khanda"></i>
+                    <h3 class="counter" data-target="120">0</h3>
+                    <p>史诗级团本</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-server"></i>
+                    <h3 class="counter" data-target="24">0</h3>
+                    <p>全球跨服阵营战</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 职业介绍区域 -->
+    <section class="classes-bg" id="classes">
+        <div class="container">
+            <div class="section-title">
+                <h2>主宰你的战斗流派</h2>
+                <p>四大阵营，八大核心职业分支。自由定制天赋树，搭配近千种技能组合，打造独一无二的战斗风格。</p>
+            </div>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <div class="class-img">
+                        <img src="https://images.unsplash.com/photo-1589417088164-8f780e0fa0c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="狂战士">
+                    </div>
+                    <div class="class-content">
+                        <h3>狂战士 Berserker</h3>
+                        <p>沐浴鲜血的战场绞肉机。擅长近战物理输出与嘲讽，用重型武器粉碎一切防线，生命值越低爆发越高。</p>
+                        <a href="#" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">查看技能演示</a>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-img">
+                        <img src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="元素使">
+                    </div>
+                    <div class="class-content">
+                        <h3>元素使 Elementalist</h3>
+                        <p>掌控天地元素的奥术大师。可以在安全距离降下毁灭性的AOE法术，或者利用冰霜与雷电控制大范围战场。</p>
+                        <a href="#" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">查看技能演示</a>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-img">
+                        <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="影舞者">
+                    </div>
+                    <div class="class-content">
+                        <h3>影舞者 Shadow Dancer</h3>
+                        <p>隐匿于黑暗的无情刺客。拥有极高的机动性与单体爆发伤害，擅长绕后暗杀敌方核心输出并全身而退。</p>
+                        <a href="#" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">查看技能演示</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载与CTA区域 -->
+    <section class="cta" id="download">
+        <div class="container">
+            <h2>准备好迎接最终的试炼了吗？</h2>
+            <p>公测现已全面开启。立即下载游戏，领取限定【深渊龙裔】坐骑及新手拓荒补给包。</p>
+            <div style="margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="btn"><i class="fab fa-windows"></i> Windows 端下载</a>
+                <a href="#" class="btn"><i class="fab fa-apple"></i> Mac OS 端下载</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游戏页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo" style="margin-bottom: 1.5rem; font-size: 1.5rem;">
+                        <i class="fas fa-dragon"></i> 星渊神域
+                    </div>
+                    <p>Next-Gen Epic Fantasy MMORPG. 致力于为全球玩家带来最硬核、最纯粹的在线角色扮演体验。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>快速导航</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">游戏首页</a></li>
+                        <li><a href="#">更新日志 (v2.4.1)</a></li>
+                        <li><a href="#">官方维基 (Wiki)</a></li>
+                        <li><a href="#">同人创作者社区</a></li>
+                        <li><a href="#">公会排行榜</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>服务与支持</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">账号封禁申诉</a></li>
+                        <li><a href="#">未成年人保护计划</a></li>
+                        <li><a href="#">防沉迷系统指引</a></li>
+                        <li><a href="#">隐私政策与用户协议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>商务与合作</h3>
+                    <p><i class="fas fa-envelope" style="color: var(--accent); margin-right: 8px;"></i> business@abyssal-stars.com</p>
+                    <p><i class="fas fa-headset" style="color: var(--accent); margin-right: 8px;"></i> support@abyssal-stars.com</p>
+                    <p style="margin-top: 1rem;">
+                        适龄提示：16岁以上<br>
+                        抵制不良游戏，拒绝盗版游戏。
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Nebula Games Studio. 保留所有权利. 《星渊神域》及相关标志是 Nebula Games 在全球范围内的注册商标。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // 动态数据滚动特效
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 100; // 动画速度基准
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                
+                // 根据数值大小动态调整递增步长
+                const inc = Math.max(target / speed, 1);
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(animateCounters, 10); // 10ms 帧率
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // 使用 IntersectionObserver 在滚动到可见区域时才触发数字动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.disconnect(); // 触发后断开监听，只执行一次
+                }
+            });
+        });
+        
+        // 监听包含数据的区块
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // 锚点平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, // 减去固定导航栏的高度
+                        behavior: 'smooth'
+                    });
+                    
+                    // 点击后自动收起移动端菜单
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
+        });
+
+        // 导航栏滚动时变色逻辑
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(5, 5, 8, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.5)';
+            } else {
+                header.style.background = 'rgba(10, 10, 15, 0.85)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
